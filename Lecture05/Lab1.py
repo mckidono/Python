@@ -14,3 +14,12 @@ counties_population = {
 }
 
 print( counties_population["Milwaukee"])
+
+counties_population["Milwaukee"] = 1000000
+
+counties_population["Outagamie"] = 189620
+
+counties_population.pop("Racine")
+
+for county, population in counties_population.items():
+    print(f'{county} county | population: {population}')
