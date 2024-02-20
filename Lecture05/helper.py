@@ -26,3 +26,13 @@ def get_email(prompt):
             return email
         else:
             print("Please enter a valid email")
+            
+def get_letter(prompt):
+    while True:
+        user_input = input(prompt)
+        is_match = re.search("^[a-zA-Z]{1,}$", user_input)
+        if is_match:
+            return user_input
+        else:
+            print("Please enter only letters")
+        
