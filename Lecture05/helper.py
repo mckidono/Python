@@ -1,3 +1,4 @@
+import re
 def get_int(prompt):
     while True:
         try:
@@ -16,3 +17,12 @@ def get_int_in_range(prompt, min, max):
                 print(f"Please enter a number between {min} and {max}")
         except:
             print("Please enter a whole number.")
+            
+def get_email(prompt):
+    while True:
+        email = input(prompt)  
+        is_match = re.search(r"^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$", email)
+        if is_match:
+            return email
+        else:
+            print("Please enter a valid email")
